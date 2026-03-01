@@ -4,15 +4,16 @@ A beautifully designed iOS app for tracking daily caffeine intake, setting limit
 
 ## Screenshots
 
-| Track | Tracking Caffeine | Leaderboard | Settings |
-|:---:|:---:|:---:|:---:|
-| ![Track Screen](screenshots/01-track-screen.png) | ![After Drinks](screenshots/03-track-multiple-drinks.png) | ![Leaderboard](screenshots/04-leaderboard.png) | ![Settings](screenshots/05-settings.png) |
+| Track | Custom Drink | Tracking Caffeine | Leaderboard | Settings |
+|:---:|:---:|:---:|:---:|:---:|
+| ![Track Screen](screenshots/01-track-screen.png) | ![Custom Drink](screenshots/custom-drink-v2.png) | ![Tracking](screenshots/track-v2.png) | ![Leaderboard](screenshots/04-leaderboard.png) | ![Settings](screenshots/05-settings.png) |
 
 ## Features
 
 ### Track Your Caffeine
 - Circular progress ring showing real-time caffeine intake vs daily limit
 - Quick-add buttons for Espresso (63mg), Double Espresso (126mg), and Americano (95mg)
+- Custom drink input — add any beverage with a custom name and caffeine amount
 - Animated ring fill with coffee-brown gradient
 - SwiftData persistence across sessions
 
@@ -20,13 +21,18 @@ A beautifully designed iOS app for tracking daily caffeine intake, setting limit
 - Ranked cards showing friends' caffeine consumption
 - Crown badge for the #1 consumer
 - Trend indicators (up/down/neutral arrows)
-- Dark brown themed cards with avatars
+- CloudKit integration for real user data (iCloud sync ready)
+- Add friends by username
 
 ### Settings
 - Adjustable daily caffeine limit (100-800mg slider)
 - Profile customization
 - Notification toggles
 - Clean card-based dark UI
+
+### Custom Tab Bar
+- Dark brown themed tab bar matching the app's design
+- Replaces the default iOS floating pill for visual consistency
 
 ## Tech Stack
 
@@ -35,6 +41,7 @@ A beautifully designed iOS app for tracking daily caffeine intake, setting limit
 - **UI**: SwiftUI
 - **Architecture**: MVVM
 - **Persistence**: SwiftData
+- **Cloud**: CloudKit (iCloud sync)
 - **Animations**: SwiftUI spring animations
 
 ## Project Structure
@@ -42,6 +49,7 @@ A beautifully designed iOS app for tracking daily caffeine intake, setting limit
 ```
 Espresso/
 ├── EspressoApp.swift
+├── Espresso.entitlements
 ├── Models/
 │   ├── CaffeineEntry.swift
 │   ├── Drink.swift
@@ -51,16 +59,20 @@ Espresso/
 │   ├── Track/
 │   │   ├── TrackView.swift
 │   │   ├── CaffeineRingView.swift
-│   │   └── DrinkButtonView.swift
+│   │   ├── DrinkButtonView.swift
+│   │   └── CustomDrinkSheet.swift
 │   ├── Friends/
 │   │   ├── LeaderboardView.swift
-│   │   └── LeaderboardCard.swift
+│   │   ├── LeaderboardCard.swift
+│   │   └── AddFriendSheet.swift
 │   └── Settings/
 │       └── SettingsView.swift
-└── ViewModels/
-    ├── TrackViewModel.swift
-    ├── LeaderboardViewModel.swift
-    └── SettingsViewModel.swift
+├── ViewModels/
+│   ├── TrackViewModel.swift
+│   ├── LeaderboardViewModel.swift
+│   └── SettingsViewModel.swift
+└── Services/
+    └── CloudKitService.swift
 ```
 
 ## Getting Started

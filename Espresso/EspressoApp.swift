@@ -7,6 +7,6 @@ struct EspressoApp: App {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: [CaffeineEntry.self, Drink.self, User.self])
+        .modelContainer(for: [CaffeineEntry.self])
     }
 }

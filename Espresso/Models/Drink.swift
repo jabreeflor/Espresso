@@ -1,13 +1,11 @@
 import Foundation
-import SwiftData
 
-@Model
-final class Drink {
-    var id: UUID
-    var name: String
-    var caffeineMg: Int
-    var iconName: String
-    var isDefault: Bool
+struct Drink: Identifiable {
+    let id: UUID
+    let name: String
+    let caffeineMg: Int
+    let iconName: String
+    let isDefault: Bool
 
     init(name: String, caffeineMg: Int, iconName: String = "cup.and.saucer.fill", isDefault: Bool = false) {
         self.id = UUID()

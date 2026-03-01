@@ -45,6 +45,14 @@ class TrackViewModel {
         fetchTodaysEntries()
     }
 
+    func addCustomDrink(name: String, caffeineMg: Int) {
+        guard caffeineMg > 0 else { return }
+        let entry = CaffeineEntry(drinkName: name.isEmpty ? "Custom" : name, caffeineMg: caffeineMg)
+        modelContext.insert(entry)
+        try? modelContext.save()
+        fetchTodaysEntries()
+    }
+
     func undoLastEntry() {
         guard let last = todaysEntries.first else { return }
         modelContext.delete(last)

@@ -22,6 +22,9 @@
 		A10000013 /* LeaderboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000013; };
 		A10000014 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000014; };
 		A10000015 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A20000015; };
+		A10000016 /* CustomDrinkSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000016; };
+		A10000017 /* AddFriendSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000017; };
+		A10000018 /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000018; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,10 @@
 		A20000013 /* LeaderboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewModel.swift; sourceTree = "<group>"; };
 		A20000014 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		A20000015 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A20000016 /* CustomDrinkSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDrinkSheet.swift; sourceTree = "<group>"; };
+		A20000017 /* AddFriendSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendSheet.swift; sourceTree = "<group>"; };
+		A20000018 /* CloudKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
+		A20000019 /* Espresso.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Espresso.entitlements; sourceTree = "<group>"; };
 		A30000001 /* Espresso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Espresso.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -74,9 +81,11 @@
 			isa = PBXGroup;
 			children = (
 				A20000001 /* EspressoApp.swift */,
+				A20000019 /* Espresso.entitlements */,
 				A50000003 /* Models */,
 				A50000004 /* Views */,
 				A50000008 /* ViewModels */,
+				A50000009 /* Services */,
 				A20000015 /* Assets.xcassets */,
 			);
 			path = Espresso;
@@ -109,6 +118,7 @@
 				A20000006 /* TrackView.swift */,
 				A20000007 /* CaffeineRingView.swift */,
 				A20000008 /* DrinkButtonView.swift */,
+				A20000016 /* CustomDrinkSheet.swift */,
 			);
 			path = Track;
 			sourceTree = "<group>";
@@ -118,6 +128,7 @@
 			children = (
 				A20000009 /* LeaderboardView.swift */,
 				A20000010 /* LeaderboardCard.swift */,
+				A20000017 /* AddFriendSheet.swift */,
 			);
 			path = Friends;
 			sourceTree = "<group>";
@@ -138,6 +149,14 @@
 				A20000014 /* SettingsViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A50000009 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A20000018 /* CloudKitService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +242,9 @@
 				A10000012 /* TrackViewModel.swift in Sources */,
 				A10000013 /* LeaderboardViewModel.swift in Sources */,
 				A10000014 /* SettingsViewModel.swift in Sources */,
+				A10000016 /* CustomDrinkSheet.swift in Sources */,
+				A10000017 /* AddFriendSheet.swift in Sources */,
+				A10000018 /* CloudKitService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +375,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Espresso/Espresso.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
@@ -382,6 +405,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Espresso/Espresso.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
